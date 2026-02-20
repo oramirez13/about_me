@@ -1,0 +1,254 @@
+/* ============================= */
+/*        MODO HACKER           */
+/* ============================= */
+
+/* Fondo general */
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Título principal */
+.titulo-principal {
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* ====== TERMINAL ====== */
+.terminal {
+    background-color: #000000;
+    color: #00ff00;
+    padding: 20px;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    box-shadow: 0 0 15px #00ff00;
+    white-space: pre-line;
+}
+
+/* Cursor parpadeante */
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Card principal */
+.card-perfil {
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+.glow {
+    box-shadow: 0 0 20px #00ff00;
+}
+
+/* Nombre */
+.nombre {
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00;
+}
+
+/* Subtítulo */
+.subtitulo {
+    color: #00cc00;
+}
+
+.especialidad {
+    color: #00aa00;
+}
+
+/* Foto */
+.foto {
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+/* Badges skills */
+.skill {
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Botón principal */
+.btn-cyber {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    transition: 0.3s;
+}
+
+.btn-cyber:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Certificaciones */
+.cert-btn {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cert-btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Idiomas */
+.badge.bg-light {
+    background-color: #000 !important;
+    color: #00ff00 !important;
+    border: 1px solid #00ff00;
+}
+
+/* Enlaces */
+.btn {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #00ff00;
+    color: #000;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Separadores */
+hr {
+    border: 1px solid #00ff00;
+    opacity: 0.4;
+}
+
+/* ============================= */
+/*        AJUSTES NUEVOS        */
+/* ============================= */
+
+/* Ajuste 1: Botón "Ver más" más compacto */
+#btnExtra {
+    width: auto;
+    padding: 6px 25px;
+}
+
+/* Ajuste 2: Quitar subrayado de todos los enlaces */
+a {
+    text-decoration: none !important;
+}
+
+/* ============================= */
+/*        EFECTOS PRO 🚀        */
+/* ============================= */
+
+/* ===== CRT SCANLINES SUAVES ===== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.03) 0px,
+        rgba(0, 255, 0, 0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: scanlinesMove 8s linear infinite;
+    z-index: 999;
+}
+
+@keyframes scanlinesMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(10px); }
+}
+
+/* ===== LINEA DE ESCANEO ===== */
+.scan-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #00ff00,
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: scanMove 3s linear infinite;
+    margin-bottom: 25px;
+}
+
+@keyframes scanMove {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ===== EFECTO GLITCH SUTIL ===== */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glitch::before {
+    animation: glitchTop 3s infinite linear alternate-reverse;
+    clip-path: inset(0 0 50% 0);
+}
+
+.glitch::after {
+    animation: glitchBottom 2.5s infinite linear alternate-reverse;
+    clip-path: inset(50% 0 0 0);
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, -1px); }
+    40% { transform: translate(2px, 1px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, 1px); }
+    40% { transform: translate(-2px, -1px); }
+    60% { transform: translate(1px, -1px); }
+    80% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0); }
+}
