@@ -1,35 +1,35 @@
-/* Variables CSS: centralizan los colores para que no haya que repetirlos en todo el archivo */
+/* CSS variables: centralize the colors so they do not have to be repeated across the whole file */
 :root {
-    --verde: #00ff00;          /* Color principal (neon verde) */
-    --verde-medio: #00cc00;    /* Verde para textos secundarios */
-    --negro: #000;             /* Color de fondo */
-    --sombra: rgba(0, 255, 0, 0.4); /* Sombra del neón con transparencia */
+    --green: #00ff00;             /* Main color (neon green) */
+    --green-medium: #00cc00;      /* Green for secondary text */
+    --black: #000;                /* Background color */
+    --shadow: rgba(0, 255, 0, 0.4); /* Neon shadow with transparency */
 }
 
 body {
-    background-color: var(--negro);
-    color: var(--verde);
+    background-color:     var(--black);
+    color:     var(--green);
     font-family: "Courier New", Courier, monospace;
 }
 
 .titulo-principal {
-    color: var(--verde);
-    text-shadow: 0 0 8px var(--verde);
+    color:     var(--green);
+    text-shadow: 0 0 8px     var(--green);
 }
 
-/* Caja que simula una terminal */
+/* Box that simulates a terminal */
 .terminal {
-    background-color: var(--negro);
-    color: var(--verde);
+    background-color:     var(--black);
+    color:     var(--green);
     padding: 20px;
-    border: 1px solid var(--verde);
+    border: 1px solid     var(--green);
     border-radius: 10px;
     font-family: "Courier New", monospace;
-    box-shadow: 0 0 15px var(--verde);
+    box-shadow: 0 0 15px     var(--green);
     white-space: pre-line;
 }
 
-/* Cursor parpadeante de la terminal */
+/* Blinking cursor of the terminal */
 .cursor {
     display: inline-block;
     animation: blink 1s infinite;
@@ -43,43 +43,43 @@ body {
 }
 
 .card-perfil {
-    background-color: var(--negro);
-    border: 1px solid var(--verde);
-    color: var(--verde);
+    background-color:     var(--black);
+    border: 1px solid     var(--green);
+    color:     var(--green);
     transition: 0.3s;
-    box-shadow: 0 0 15px var(--sombra);
+    box-shadow: 0 0 15px     var(--shadow);
 }
 
 .glow {
-    box-shadow: 0 0 20px var(--verde);
+    box-shadow: 0 0 20px     var(--green);
 }
 
 .nombre {
-    color: var(--verde);
-    text-shadow: 0 0 8px var(--verde);
+    color:     var(--green);
+    text-shadow: 0 0 8px     var(--green);
 }
 
 .subtitulo {
-    color: var(--verde-medio);
+    color:     var(--green-medium);
 }
 
 .foto {
     width: 150px;
     border-radius: 50%;
-    border: 2px solid var(--verde);
-    box-shadow: 0 0 15px var(--verde);
+    border: 2px solid     var(--green);
+    box-shadow: 0 0 15px     var(--green);
 }
 
-/* Clases .skill, .btn-cyber, .cert-btn y .btn comparten el mismo estilo:
-   botones y etiquetas con fondo negro, borde y texto verde.
-   Se consolidan en un solo selector para evitar codigo repetido. */
+/* Classes .skill, .btn-cyber, .cert-btn and .btn share the same style:
+   buttons and badges with black background, green border and green text.
+   They are consolidated in one selector to avoid duplicated code. */
 .skill,
 .btn-cyber,
 .cert-btn,
 .btn {
-    background-color: var(--negro);
-    color: var(--verde);
-    border: 1px solid var(--verde);
+    background-color:     var(--black);
+    color:     var(--green);
+    border: 1px solid     var(--green);
     transition: 0.3s;
 }
 
@@ -87,19 +87,19 @@ body {
 .btn-cyber:hover,
 .cert-btn:hover,
 .btn:hover {
-    background-color: var(--verde);
-    color: var(--negro);
-    box-shadow: 0 0 10px var(--verde);
+    background-color:     var(--green);
+    color:     var(--black);
+    box-shadow: 0 0 10px     var(--green);
 }
 
-/* Los enlaces de certificaciones usan una clase propia para quitar el subrayado
-   sin necesidad de usar !important */
+/* Certification links use their own class to remove the underline
+   without needing !important */
 .cert-btn {
     text-decoration: none;
 }
 
 hr {
-    border: 1px solid var(--verde);
+    border: 1px solid     var(--green);
     opacity: 0.4;
 }
 
@@ -108,7 +108,7 @@ hr {
     padding: 6px 25px;
 }
 
-/* Capa de lineas de escaneo sobre toda la pagina (efecto CRT) */
+/* Scanlines layer over the whole page (CRT effect) */
 body::before {
     content: "";
     position: fixed;
@@ -133,14 +133,14 @@ body::before {
     to { transform: translateY(10px); }
 }
 
-/* Barra de luz que recorre la pagina horizontalmente */
+/* Light bar that travels across the page horizontally */
 .scan-line {
     width: 100%;
     height: 2px;
     background: linear-gradient(
         90deg,
         transparent,
-        var(--verde),
+        var(--green),
         transparent
     );
     background-size: 200% 100%;
@@ -153,7 +153,7 @@ body::before {
     100% { background-position: -200% 0; }
 }
 
-/* Efecto de texto que se parte en dos (glitch), usando el atributo data-text */
+/* Text that splits in two (glitch effect), using the data-text attribute */
 .glitch {
     position: relative;
     display: inline-block;
@@ -166,8 +166,8 @@ body::before {
     left: 0;
     width: 100%;
     overflow: hidden;
-    color: var(--verde);
-    background: var(--negro);
+    color:     var(--green);
+    background:     var(--black);
 }
 
 .glitch::before {
@@ -198,8 +198,8 @@ body::before {
     100% { transform: translate(0); }
 }
 
-/* Accesibilidad: si el usuario pide reducir el movimiento en el sistema,
-   se desactivan todas las animaciones para evitar molestias o mareos */
+/* Accessibility: if the user asks the system to reduce motion,
+   all animations are disabled to avoid discomfort or dizziness */
 @media (prefers-reduced-motion: reduce) {
     .cursor,
     body::before,

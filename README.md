@@ -39,4 +39,3 @@ about_me/
 orami (oramirez13)
 
 - GitHub: https://github.com/oramirez13
-- Web: https://orami.netlify.app/

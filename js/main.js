@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  // Mostrar la tarjeta con fade-in
+  // Show the card with a fade-in effect
   $(".card-perfil").hide().fadeIn(1000);
 
-  // Efecto glow al pasar el mouse sobre la tarjeta
+  // Glow effect when hovering over the card
   $(".card-perfil").hover(
     function () {
       $(this).addClass("glow");
@@ -12,35 +12,35 @@ $(document).ready(function () {
     }
   );
 
-  // Toggle del botón Top Skills
+  // Top Skills button toggle
   $("#btnExtra").click(function () {
-    // Referencia al panel que se muestra u oculta
+    // Reference to the panel that is shown or hidden
     const $panel = $("#infoExtra");
 
-    // Saber si el panel esta visible: no tiene la clase d-none
+    // Know if the panel is visible: it does not have the d-none class
     const visible = !$panel.hasClass("d-none");
 
-    // Actualizar aria-expanded de inmediato para los lectores de pantalla
+    // Update aria-expanded immediately for screen readers
     $(this).attr("aria-expanded", String(!visible));
 
     if (visible) {
-      // Si esta visible, se cierra con slideUp
+      // If visible, close it with slideUp
       $panel.slideUp(500, function () {
-        // Cuando termina la animacion se aplica d-none otra vez
+        // When the animation ends, apply d-none again
         $panel.addClass("d-none");
       });
     } else {
-      // Si esta oculto, se quita d-none, se oculta con jQuery y se despliega
+      // If hidden, remove d-none, hide it with jQuery and slide it down
       $panel.removeClass("d-none").hide().slideDown(500);
     }
   });
 
-  // Escritura automática en la terminal
+  // Automatic typing in the terminal
   const texto =
     "root@orami:~$ Starting profile...\nAccess granted\nWelcome to the system";
   let i = 0;
 
-  // Bandera que indica si la escritura de la terminal termino
+  // Flag that indicates whether the terminal finished typing
   let escrituraTerminada = false;
 
   function escribir() {
@@ -49,22 +49,22 @@ $(document).ready(function () {
       i++;
       setTimeout(escribir, 40);
     } else {
-      // Marcar el final de la escritura para habilitar los demas eventos
+      // Mark the end of typing to enable the other events
       escrituraTerminada = true;
     }
   }
   escribir();
 
-  // Verificación de certificados: solo una línea aunque se haga click varias veces
+  // Certificate verification: only one line even if clicked several times
   let certificadoVerificado = false;
 
   $(".cert-btn").click(function () {
-    // Si la terminal aun esta escribiendo, se ignora el click para no mezclar el texto
+    // If the terminal is still typing, ignore the click so the text is not mixed
     if (!escrituraTerminada) {
       return;
     }
 
-    // Mostrar el mensaje de verificacion una sola vez
+    // Show the verification message only once
     if (!certificadoVerificado) {
       $("#terminal-text").append("<br>verifying certificate...");
       certificadoVerificado = true;

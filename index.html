@@ -3,29 +3,32 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Etiqueta viewport: permite que la pagina se adapte al ancho de pantallas moviles -->
+    <!-- Viewport meta tag: makes the page adapt to the width of mobile screens -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Descripcion corta: la usan los buscadores y las redes sociales -->
+    <!-- Short description: used by search engines and social networks -->
     <meta
       name="description"
-      content="Perfil profesional de Orami: estudiante de Ingenieria en Seguridad Informatica, entusiasta de Linux y desarrollador de aplicaciones web seguras."
+      content="Professional profile of Orami: Information Security Engineering (in progress), Linux enthusiast and secure web developer."
     />
 
-    <!-- Metadatos Open Graph: controlan la vista previa al compartir el link en redes sociales -->
+    <!-- Open Graph metadata: control the preview when sharing the link on social media -->
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Professional Profile - orami" />
     <meta
       property="og:description"
-      content="Informacion Security Engineering student focused on offensive security and secure web development."
+      content="Information Security Engineering (in progress), passionate about Linux environments and secure web development."
     />
     <meta property="og:url" content="https://github.com/oramirez13/about_me" />
-    <meta property="og:image" content="img/orami.png" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/oramirez13/about_me/main/img/orami.png"
+    />
     <meta property="og:site_name" content="about_me" />
 
     <title>Professional Profile - orami</title>
 
-    <!-- Favicon: icono pequeno que se muestra en la pestana del navegador -->
+    <!-- Favicon: small icon shown in the browser tab -->
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
 
     <!-- Bootstrap CSS -->
@@ -62,28 +65,28 @@
             <h3 class="nombre">orami</h3>
             <p class="subtitulo">Secure Web Development</p>
           </div>
-          <!-- Descripcion de la imagen: texto alternativo util para accesibilidad y SEO -->
+          <!-- Image description: alternative text for accessibility and SEO -->
           <img
             src="img/orami.png"
             class="foto mt-3"
-            alt="Foto de perfil de Orami"
+            alt="Profile picture of Orami"
           />
         </div>
 
         <hr />
 
-        <!-- Breve resumen profesional, sin texto duplicado -->
+        <!-- Brief professional summary, without duplicated text -->
         <h5>About me</h5>
         <p>
-          Information Security Engineer with a strong interest in Linux
-          environments and secure web development. Passionate about building
-          projects, exploring new technologies, and continuously expanding my
-          knowledge through hands-on experience.
+          Information Security Engineering (in progress) with a strong interest
+          in Linux environments and secure web development. Passionate about
+          building projects, exploring new technologies, and continuously
+          expanding my knowledge through hands-on experience.
         </p>
 
         <hr />
 
-        <!-- Boton con aria-expanded/aria-controls: atributos de accesibilidad que avisan a los lectores de pantalla cuando se abre o cierra el panel -->
+        <!-- Button with aria-expanded/aria-controls: accessibility attributes that tell screen readers when the panel opens or closes -->
         <button
           id="btnExtra"
           class="btn btn-cyber rounded-pill mt-3"
@@ -93,7 +96,7 @@
           Top Skills
         </button>
 
-        <!-- Clase d-none en vez de estilos en linea: oculta el panel por defecto -->
+        <!-- d-none class instead of inline styles: hides the panel by default -->
         <div id="infoExtra" class="d-none mt-3">
           <p>Scripting • Linux environments • Problem Solving</p>
         </div>
@@ -152,7 +155,7 @@
 
         <h5>Languages</h5>
         <div class="mb-3">
-          <!-- Banderas como emojis para identificar cada idioma -->
+          <!-- Country flags as emojis to identify each language -->
           <span class="badge skill rounded-pill p-2 m-1">🇪🇸 Spanish</span>
           <span class="badge skill rounded-pill p-2 m-1">🇺🇸 English</span>
           <span class="badge skill rounded-pill p-2 m-1">🇮🇹 Italian</span>
@@ -162,7 +165,7 @@
 
         <h5>Links</h5>
         <div class="d-flex flex-wrap gap-2">
-          <!-- rel="noopener noreferrer" en cada enlace externo: evita que la pagina abierta acceda a esta via window.opener -->
+          <!-- rel="noopener noreferrer" on every external link: prevents the opened page from accessing this one via window.opener -->
           <a
             href="https://tryhackme.com/p/orami"
             target="_blank"
@@ -207,7 +210,7 @@
       </div>
     </div>
 
-    <!-- Scripts al final del body: el navegador carga el HTML primero y ejecuta jQuery al final, sin bloquear el render -->
+    <!-- Scripts at the end of the body: the browser loads the HTML first and runs jQuery at the end, without blocking the render -->
     <script src="includes/jquery-4.0.0.min.js"></script>
     <script src="js/main.js"></script>
   </body>
