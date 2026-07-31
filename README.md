@@ -1,6 +1,6 @@
 # about_me
 
-Orami's professional profile with a cyberpunk terminal aesthetic. It is a static page built with HTML, CSS, JavaScript and jQuery, focused on information security, Linux and secure web development.
+My professional profile with a cyberpunk terminal aesthetic, built with HTML, CSS, JavaScript and jQuery, focused on information security, Linux and secure web development.
 
 ## Features
 
@@ -27,16 +27,6 @@ about_me/
     └── ...
 ```
 
-## How to run it
-
-It does not require a server or additional dependencies. Open `index.html` directly in your browser or use a local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then go to `http://localhost:8000`.
-
 ## Technologies
 
 - HTML5, CSS3
@@ -46,7 +36,7 @@ Then go to `http://localhost:8000`.
 
 ## Author
 
-Orami (oramirez13)
+orami (oramirez13)
 
 - GitHub: https://github.com/oramirez13
 - Web: https://orami.netlify.app/
