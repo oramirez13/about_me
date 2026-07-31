@@ -1,50 +1,50 @@
 # about_me
 
-Perfil profesional de Orami con estetica cyberpunk estilo terminal. Es una pagina estatica construida con HTML, CSS, JavaScript y jQuery, enfocada en seguridad informatica, Linux y desarrollo web seguro.
+Orami's professional profile with a cyberpunk terminal aesthetic. It is a static page built with HTML, CSS, JavaScript and jQuery, focused on information security, Linux and secure web development.
 
-## Caracteristicas
+## Features
 
-- Estetica terminal retro: texto verde neón, lineas de escaneo CRT y efecto glitch.
-- Terminal animada con escritura automatica usando jQuery.
-- Tarjeta de perfil con secciones de habilidades, certificaciones, idiomas y enlaces.
-- Diseño responsive con Bootstrap 5 e iconos de Bootstrap Icons.
-- Accesibilidad: soporte para `prefers-reduced-motion`, atributos ARIA y descripciones alternativas en imagenes.
+- Retro terminal aesthetic: neon green text, CRT scanlines and glitch effect.
+- Animated terminal with automatic typing using jQuery.
+- Profile card with sections for skills, certifications, languages and links.
+- Responsive design with Bootstrap 5 and Bootstrap Icons.
+- Accessibility: `prefers-reduced-motion` support, ARIA attributes and alternative image descriptions.
 
-## Estructura del proyecto
+## Project structure
 
 ```
 about_me/
-├── index.html              Página principal del perfil
+├── index.html              Main profile page
 ├── css/
-│   └── style.css           Estilos personalizados con variables CSS
+│   └── style.css           Custom styles using CSS variables
 ├── js/
-│   └── main.js             Lógica interactiva (terminal, toggles, verificacion)
+│   └── main.js             Interactive logic (terminal, toggles, verification)
 ├── includes/
-│   └── jquery-4.0.0.min.js Biblioteca jQuery local
+│   └── jquery-4.0.0.min.js Local jQuery library
 └── img/
-    ├── orami.png           Foto de perfil
-    ├── favicon.svg         Icono de la pestana del navegador
+    ├── orami.png           Profile picture
+    ├── favicon.svg         Browser tab icon
     └── ...
 ```
 
-## Como ejecutarlo
+## How to run it
 
-No requiere servidor ni dependencias adicionales. Abre `index.html` directamente en el navegador o usa un servidor local:
+It does not require a server or additional dependencies. Open `index.html` directly in your browser or use a local server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Luego entra a `http://localhost:8000`.
+Then go to `http://localhost:8000`.
 
-## Tecnologias
+## Technologies
 
 - HTML5, CSS3
-- JavaScript con jQuery
+- JavaScript with jQuery
 - Bootstrap 5
 - Bootstrap Icons
 
-## Autor
+## Author
 
 Orami (oramirez13)
 
