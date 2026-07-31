@@ -2,7 +2,6 @@
 :root {
     --verde: #00ff00;          /* Color principal (neon verde) */
     --verde-medio: #00cc00;    /* Verde para textos secundarios */
-    --verde-oscuro: #00aa00;   /* Verde para textos terciarios */
     --negro: #000;             /* Color de fondo */
     --sombra: rgba(0, 255, 0, 0.4); /* Sombra del neón con transparencia */
 }
@@ -62,10 +61,6 @@ body {
 
 .subtitulo {
     color: var(--verde-medio);
-}
-
-.especialidad {
-    color: var(--verde-oscuro);
 }
 
 .foto {

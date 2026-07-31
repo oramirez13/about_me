@@ -14,12 +14,25 @@ $(document).ready(function () {
 
   // Toggle del botón Top Skills
   $("#btnExtra").click(function () {
-    // Cambiar el estado del panel (visible u oculto)
-    $("#infoExtra").slideToggle(500);
+    // Referencia al panel que se muestra u oculta
+    const $panel = $("#infoExtra");
 
-    // Actualizar aria-expanded para que los lectores de pantalla sepan si el panel esta abierto
-    const expandido = $("#infoExtra").is(":visible");
-    $(this).attr("aria-expanded", expandido);
+    // Saber si el panel esta visible: no tiene la clase d-none
+    const visible = !$panel.hasClass("d-none");
+
+    // Actualizar aria-expanded de inmediato para los lectores de pantalla
+    $(this).attr("aria-expanded", String(!visible));
+
+    if (visible) {
+      // Si esta visible, se cierra con slideUp
+      $panel.slideUp(500, function () {
+        // Cuando termina la animacion se aplica d-none otra vez
+        $panel.addClass("d-none");
+      });
+    } else {
+      // Si esta oculto, se quita d-none, se oculta con jQuery y se despliega
+      $panel.removeClass("d-none").hide().slideDown(500);
+    }
   });
 
   // Escritura automática en la terminal
