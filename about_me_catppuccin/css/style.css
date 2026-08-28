@@ -1,15 +1,22 @@
 /* CSS variables: centralize the colors so they do not have to be repeated across the whole file.
-   This version uses the colors taken from the reference image (img/catppuccin_01.png):
-   a clean, dark visual style without neon or cyberpunk effects. */
+   This version uses the colors taken from the reference image (img/catppuccin_01.png)
+   and expands them with more accent colors to give the page a richer, multi-color look.
+   The style is clean and dark, without neon or cyberpunk effects. */
 :root {
-    --base: #2b2e40;             /* Main background color (dominant color of the reference image) */
+    /* Neutral / background colors */
+    --base: #2b2e40;             /* Main background color */
     --surface: #343850;          /* Slightly lighter surface for cards and terminal */
     --text: #cdd6f4;             /* Main text color */
-    --text-soft: #869cc0;        /* Secondary text (azul-gris claro from the image) */
-    --accent: #8ba1c6;           /* Main accent color (light blue-gray from the image) */
-    --accent-strong: #687fb0;    /* Deeper accent for borders and hover */
-    --green-soft: #7b996d;       /* Soft green accent (from the image) */
-    --rose-soft: #a6646a;        /* Soft rose accent (from the image) */
+    --text-soft: #869cc0;        /* Secondary text color */
+
+    /* Accent colors (added to give more variety to the page) */
+    --blue: #8ba1c6;             /* Soft blue-gray: titles and main links */
+    --blue-strong: #687fb0;      /* Deeper blue: borders and hover states */
+    --lavender: #888cbc;         /* Lavender: certifications and secondary accents */
+    --green: #7b996d;            /* Soft green: terminal cursor and skills */
+    --rose: #a6646a;             /* Soft rose: language badges */
+    --apricot: #d8a657;          /* Warm apricot: extra highlights and accents */
+    --teal: #6ba4af;             /* Teal: additional accent for variety */
 }
 
 body {
@@ -19,7 +26,7 @@ body {
 }
 
 .titulo-principal {
-    color:     var(--accent);
+    color:     var(--blue);
 }
 
 /* Box that simulates a terminal (clean style, no neon glow) */
@@ -27,7 +34,7 @@ body {
     background-color:     var(--surface);
     color:     var(--text);
     padding: 20px;
-    border: 1px solid     var(--accent-strong);
+    border: 1px solid     var(--green);
     border-radius: 10px;
     font-family: "Courier New", monospace;
     white-space: pre-line;
@@ -38,7 +45,7 @@ body {
     display: inline-block;
     animation: blink 1s infinite;
     font-weight: bold;
-    color: var(--green-soft);
+    color: var(--green);
 }
 
 @keyframes blink {
@@ -49,7 +56,7 @@ body {
 
 .card-perfil {
     background-color:     var(--surface);
-    border: 1px solid     var(--accent-strong);
+    border: 1px solid     var(--blue-strong);
     color:     var(--text);
     transition: 0.3s;
 }
@@ -59,55 +66,106 @@ body {
 }
 
 .nombre {
-    color:     var(--accent);
+    color:     var(--blue);
 }
 
 .subtitulo {
-    color:     var(--accent-strong);
+    color:     var(--teal);
 }
 
 .foto {
     width: 150px;
     border-radius: 50%;
-    border: 2px solid     var(--accent-strong);
+    border: 2px solid     var(--blue-strong);
 }
 
-/* Classes .skill, .btn-cyber, .cert-btn and .btn share the same style:
-   buttons and badges with dark background, soft border and soft text.
-   They are consolidated in one selector to avoid duplicated code. */
-.skill,
-.btn-cyber,
-.cert-btn,
-.btn {
+/* Section headings inside the card get different accent colors */
+h5 {
+    color:     var(--lavender);
+}
+
+/* Classes .skill, .btn-cyber, .cert-btn and .btn share a similar base style:
+   buttons and badges with dark background, colored border and colored text.
+   Each one has its own accent color to add variety. */
+.btn-cyber {
     background-color:     var(--base);
-    color:     var(--accent);
-    border: 1px solid     var(--accent-strong);
+    color:     var(--blue);
+    border: 1px solid     var(--blue-strong);
     transition: 0.3s;
 }
 
-.skill:hover,
-.btn-cyber:hover,
-.cert-btn:hover,
-.btn:hover {
-    background-color:     var(--accent);
+.btn-cyber:hover {
+    background-color:     var(--blue);
     color:     var(--base);
-    border-color:     var(--accent);
+    border-color:     var(--blue);
 }
 
-/* Certification links use their own class to remove the underline
-   without needing !important */
+.skill {
+    background-color:     var(--base);
+    color:     var(--green);
+    border: 1px solid     var(--green);
+    transition: 0.3s;
+}
+
+.skill:hover {
+    background-color:     var(--green);
+    color:     var(--base);
+    border-color:     var(--green);
+}
+
+/* Language badges use the rose color */
+.badge.skill {
+    color:     var(--rose);
+    border-color:     var(--rose);
+}
+
+.badge.skill:hover {
+    background-color:     var(--rose);
+    color:     var(--base);
+    border-color:     var(--rose);
+}
+
 .cert-btn {
+    background-color:     var(--base);
+    color:     var(--lavender);
+    border: 1px solid     var(--lavender);
+    transition: 0.3s;
     text-decoration: none;
 }
 
+.cert-btn:hover {
+    background-color:     var(--lavender);
+    color:     var(--base);
+    border-color:     var(--lavender);
+}
+
+.btn {
+    background-color:     var(--base);
+    color:     var(--blue);
+    border: 1px solid     var(--blue-strong);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color:     var(--blue);
+    color:     var(--base);
+    border-color:     var(--blue);
+}
+
 hr {
-    border: 1px solid     var(--accent-strong);
+    border: 1px solid     var(--blue-strong);
     opacity: 0.4;
 }
 
 #btnExtra {
     width: auto;
     padding: 6px 25px;
+}
+
+/* The accented text inside the profile summary uses the apricot color to stand out */
+.termino-destaque {
+    color:     var(--apricot);
+    font-weight: bold;
 }
 
 /* Accessibility: the cursor blink is the only animation left, and it can be

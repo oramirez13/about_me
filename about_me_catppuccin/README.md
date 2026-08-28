@@ -6,7 +6,7 @@ referencia `img/catppuccin_01.png`. A diferencia de la versión original, esta
 versión **no incluye efectos cyberpunk** (sin glitch, sin scanlines CRT ni
 resplandor neón).
 
-## Paleta utilizada (extraída de la imagen de referencia)
+## Paleta utilizada (extraída de la imagen de referencia y expandida)
 
 | Variable          | Color    | Uso                          |
 |-------------------|----------|------------------------------|
@@ -14,10 +14,13 @@ resplandor neón).
 | `--surface`       | `#343850`| Superficie de tarjetas       |
 | `--text`          | `#cdd6f4`| Texto principal              |
 | `--text-soft`     | `#869cc0`| Texto secundario             |
-| `--accent`        | `#8ba1c6`| Acento principal             |
-| `--accent-strong` | `#687fb0`| Acento profundo (bordes)     |
-| `--green-soft`    | `#7b996d`| Verde suave (cursor)         |
-| `--rose-soft`     | `#a6646a`| Rosa suave                   |
+| `--blue`          | `#8ba1c6`| Azul: títulos y enlaces      |
+| `--blue-strong`   | `#687fb0`| Azul profundo: bordes/hover  |
+| `--lavender`      | `#888cbc`| Lavanda: certificaciones     |
+| `--green`         | `#7b996d`| Verde: cursor y habilidades  |
+| `--rose`          | `#a6646a`| Rosa: idiomas                |
+| `--apricot`       | `#d8a657`| Aprieta: palabras destacadas |
+| `--teal`          | `#6ba4af`| Teal: subtítulos             |
 
 ## Funcionalidad (misma que la versión original, sin efectos cyberpunk)
 
