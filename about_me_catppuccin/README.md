@@ -19,7 +19,7 @@ resplandor neón).
 | `--lavender`      | `#888cbc`| Lavanda: certificaciones     |
 | `--green`         | `#7b996d`| Verde: cursor y habilidades  |
 | `--rose`          | `#a6646a`| Rosa: idiomas                |
-| `--apricot`       | `#d8a657`| Aprieta: palabras destacadas |
+| `--apricot`       | `#d8a657`| Albaricoque: palabras destacadas |
 | `--teal`          | `#6ba4af`| Teal: subtítulos             |
 
 ## Funcionalidad (misma que la versión original, sin efectos cyberpunk)
