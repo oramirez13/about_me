@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Viewport meta tag: makes the page adapt to the width of mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Short description: used by search engines and social networks -->
+    <meta
+      name="description"
+      content="Professional profile of Orami with a Catppuccin theme: Information Security Engineering (in progress), Linux enthusiast and secure web developer."
+    />
+
+    <!-- Open Graph metadata: control the preview when sharing the link on social media -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Professional Profile - orami (Catppuccin)" />
+    <meta
+      property="og:description"
+      content="Information Security Engineering (in progress), passionate about Linux environments and secure web development, styled with the Catppuccin palette."
+    />
+    <meta property="og:url" content="https://github.com/oramirez13/about_me" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/oramirez13/about_me/main/img/orami.png"
+    />
+    <meta property="og:site_name" content="about_me_catppuccin" />
+
+    <title>Professional Profile - orami (Catppuccin)</title>
+
+    <!-- Favicon: small icon shown in the browser tab -->
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h2 class="titulo-principal text-center mb-4 glitch" data-text="About me">
+        About me
+      </h2>
+
+      <div class="scan-line"></div>
+
+      <div class="terminal mb-4">
+        <span id="terminal-text"></span><span class="cursor">|</span>
+      </div>
+
+      <div class="card shadow-lg card-perfil p-4">
+        <div
+          class="d-flex justify-content-between align-items-center flex-wrap"
+        >
+          <div>
+            <h3 class="nombre">orami</h3>
+            <p class="subtitulo">Secure Web Development</p>
+          </div>
+          <!-- Image description: alternative text for accessibility and SEO -->
+          <img
+            src="img/orami.png"
+            class="foto mt-3"
+            alt="Profile picture of Orami"
+          />
+        </div>
+
+        <hr />
+
+        <!-- Brief professional summary, without duplicated text -->
+        <h5>About me</h5>
+        <p>
+          Information Security Engineering (in progress) with a strong interest
+          in Linux environments and secure web development. Passionate about
+          building projects, exploring new technologies, and continuously
+          expanding my knowledge through hands-on experience.
+        </p>
+
+        <hr />
+
+        <!-- Button with aria-expanded/aria-controls: accessibility attributes that tell screen readers when the panel opens or closes -->
+        <button
+          id="btnExtra"
+          class="btn btn-cyber rounded-pill mt-3"
+          aria-expanded="false"
+          aria-controls="infoExtra"
+        >
+          Top Skills
+        </button>
+
+        <!-- d-none class instead of inline styles: hides the panel by default -->
+        <div id="infoExtra" class="d-none mt-3">
+          <p>Scripting • Linux environments • Problem Solving</p>
+        </div>
+
+        <hr />
+
+        <h5>Certifications</h5>
+        <div class="mb-3">
+          <a
+            href="https://www.credly.com/badges/94d069bf-fc9a-4361-b591-4078c290f329/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge rounded-pill p-2 m-1 cert-btn"
+          >
+            Ethical Hacker
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/08821aa5-4db7-424a-9cd6-e20aee35eb0b/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge rounded-pill p-2 m-1 cert-btn"
+          >
+            Python Essentials 1
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/f998cb21-e0ec-440b-8207-3cb6820d937a/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge rounded-pill p-2 m-1 cert-btn"
+          >
+            Python Essentials 2
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/16faf740-2496-4032-97e2-ee893a03b094/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge rounded-pill p-2 m-1 cert-btn"
+          >
+            Linux I
+          </a>
+
+          <a
+            href="https://www.credly.com/badges/bc7ff9e6-3e77-419d-86cb-d9794d61acd5/linked_in_profile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="badge rounded-pill p-2 m-1 cert-btn"
+          >
+            Linux II
+          </a>
+        </div>
+
+        <hr />
+
+        <h5>Languages</h5>
+        <div class="mb-3">
+          <!-- Country flags as emojis to identify each language -->
+          <span class="badge skill rounded-pill p-2 m-1">🇪🇸 Spanish</span>
+          <span class="badge skill rounded-pill p-2 m-1">🇺🇸 English</span>
+          <span class="badge skill rounded-pill p-2 m-1">🇮🇹 Italian</span>
+        </div>
+
+        <hr />
+
+        <h5>Links</h5>
+        <div class="d-flex flex-wrap gap-2">
+          <!-- rel="noopener noreferrer" on every external link: prevents the opened page from accessing this one via window.opener -->
+          <a
+            href="https://tryhackme.com/p/orami"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cyber rounded-pill"
+          >
+            TryHackMe
+          </a>
+          <a
+            href="https://www.youtube.com/@orami13/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cyber rounded-pill"
+          >
+            <i class="bi bi-youtube"></i> YouTube
+          </a>
+          <a
+            href="https://www.linkedin.com/in/orami13/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cyber rounded-pill"
+          >
+            <i class="bi bi-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="https://x.com/ORAMI1322"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cyber rounded-pill"
+          >
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a
+            href="https://github.com/oramirez13"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-cyber rounded-pill"
+          >
+            <i class="bi bi-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts at the end of the body: the browser loads the HTML first and runs jQuery at the end, without blocking the render -->
+    <script src="includes/jquery-4.0.0.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+/* CSS variables: centralize the colors so they do not have to be repeated across the whole file.
+   This version uses the Catppuccin Mocha palette (pastel colors) instead of the neon green theme. */
+:root {
+    --base: #1e1e2e;             /* Main background color (Catppuccin base) */
+    --text: #cdd6f4;             /* Main text color (Catppuccin text) */
+    --accent: #89b4fa;           /* Primary accent color (Catppuccin blue) */
+    --accent-soft: #a6e3a1;      /* Secondary accent for subtitles (Catppuccin green) */
+    --mauve: #cba6f7;            /* Hover accent color (Catppuccin mauve) */
+    --surface: #313244;          /* Card/surface background color (Catppuccin surface0) */
+    --shadow: rgba(137, 180, 250, 0.35); /* Soft shadow with the accent color */
+}
+
+body {
+    background-color:     var(--base);
+    color:     var(--text);
+    font-family: "Courier New", Courier, monospace;
+}
+
+.titulo-principal {
+    color:     var(--accent);
+    text-shadow: 0 0 8px     var(--accent);
+}
+
+/* Box that simulates a terminal */
+.terminal {
+    background-color:     var(--surface);
+    color:     var(--text);
+    padding: 20px;
+    border: 1px solid     var(--accent);
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    box-shadow: 0 0 15px     var(--accent);
+    white-space: pre-line;
+}
+
+/* Blinking cursor of the terminal */
+.cursor {
+    display: inline-block;
+    animation: blink 1s infinite;
+    font-weight: bold;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.card-perfil {
+    background-color:     var(--surface);
+    border: 1px solid     var(--accent);
+    color:     var(--text);
+    transition: 0.3s;
+    box-shadow: 0 0 15px     var(--shadow);
+}
+
+.glow {
+    box-shadow: 0 0 20px     var(--accent);
+}
+
+.nombre {
+    color:     var(--accent);
+    text-shadow: 0 0 8px     var(--accent);
+}
+
+.subtitulo {
+    color:     var(--accent-soft);
+}
+
+.foto {
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid     var(--accent);
+    box-shadow: 0 0 15px     var(--accent);
+}
+
+/* Classes .skill, .btn-cyber, .cert-btn and .btn share the same style:
+   buttons and badges with surface background, accent border and accent text.
+   They are consolidated in one selector to avoid duplicated code. */
+.skill,
+.btn-cyber,
+.cert-btn,
+.btn {
+    background-color:     var(--base);
+    color:     var(--accent);
+    border: 1px solid     var(--accent);
+    transition: 0.3s;
+}
+
+.skill:hover,
+.btn-cyber:hover,
+.cert-btn:hover,
+.btn:hover {
+    background-color:     var(--mauve);
+    color:     var(--base);
+    box-shadow: 0 0 10px     var(--mauve);
+}
+
+/* Certification links use their own class to remove the underline
+   without needing !important */
+.cert-btn {
+    text-decoration: none;
+}
+
+hr {
+    border: 1px solid     var(--accent);
+    opacity: 0.4;
+}
+
+#btnExtra {
+    width: auto;
+    padding: 6px 25px;
+}
+
+/* Scanlines layer over the whole page (CRT effect) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(137, 180, 250, 0.03) 0px,
+        rgba(137, 180, 250, 0.03) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    animation: scanlinesMove 8s linear infinite;
+    z-index: 999;
+}
+
+@keyframes scanlinesMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(10px); }
+}
+
+/* Light bar that travels across the page horizontally */
+.scan-line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--accent),
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: scanMove 3s linear infinite;
+    margin-bottom: 25px;
+}
+
+@keyframes scanMove {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Text that splits in two (glitch effect), using the data-text attribute */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    color:     var(--accent);
+    background:     var(--base);
+}
+
+.glitch::before {
+    animation: glitchTop 3s infinite linear alternate-reverse;
+    clip-path: inset(0 0 50% 0);
+}
+
+.glitch::after {
+    animation: glitchBottom 2.5s infinite linear alternate-reverse;
+    clip-path: inset(50% 0 0 0);
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, -1px); }
+    40% { transform: translate(2px, 1px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, 1px); }
+    40% { transform: translate(-2px, -1px); }
+    60% { transform: translate(1px, -1px); }
+    80% { transform: translate(-1px, 1px); }
+    100% { transform: translate(0); }
+}
+
+/* Accessibility: if the user asks the system to reduce motion,
+   all animations are disabled to avoid discomfort or dizziness */
+@media (prefers-reduced-motion: reduce) {
+    .cursor,
+    body::before,
+    .scan-line,
+    .glitch::before,
+    .glitch::after {
+        animation: none;
+    }
+}
